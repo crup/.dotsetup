@@ -16,11 +16,34 @@ is_installed () {
 }
 
 # Install or update homebrew
-if command_exists brew; then
+if is_installed brew; then
   brew update
+  brew doctor
 else
   echo "Installing brew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   echo "brew installed"
 fi
 
+# Install CLI Mac App store
+if is_installed mas; then
+  read -p 'Mac App store email: ' email	
+  mas signin $email
+  echo "Signed in ($email)"
+else
+  echo "Installing mas"
+  brew install mas
+  echo "mas installed"
+fi
+
+# Install brew bundle
+brewFile="Brewfile"
+if [ -f "$brewFile" ]
+then
+	echo "$brewFile found, .$brewFile will be ignored."
+	echo "Installing the bundle..."
+	brew bundle install
+else
+	cp ".$brewFile" "$brewFile"
+	echo "$brewFile not found, Created a new $brewFile from .$brewFile."
+fi
