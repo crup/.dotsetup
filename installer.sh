@@ -47,3 +47,5 @@ else
 	cp ".$brewFile" "$brewFile"
 	echo "$brewFile not found, Created a new $brewFile from .$brewFile."
 fi
+
+sudo xcodebuild -license
