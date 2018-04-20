@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # installer.init.sh
 #
@@ -38,7 +38,7 @@ fi
 # Install CLI Mac App store
 if is_installed mas; then
   read -p 'Mac App store email: ' email	
-  mas signin $email
+#  mas signin $email
   echo "Signed in ($email)"
 else
   echo "Installing mas"
