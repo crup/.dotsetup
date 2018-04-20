@@ -9,3 +9,4 @@
 
 echo "Installing Brewfile bundle..."
 brew bundle install
+sudo xcode-select -s /Applications/Xcode.app
