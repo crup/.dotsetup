@@ -51,11 +51,11 @@ brewFile="Brewfile"
 if [ -f "$brewFile" ]
 then
 	echo "$brewFile found, .$brewFile will be ignored."
-	./installer.sh
+	sh ./installer.sh
 else
 	echo "$brewFile not found, Creating a new $brewFile from .$brewFile."
-	# cp ".$brewFile" "$brewFile"
+	cp ".$brewFile" "$brewFile"
 	echo "$brewFile will install the following packages:"
 	cat ".$brewFile"
-	yes_or_no "Continue installation?" && ./installer.sh
+	yes_or_no "Continue installation?" && sh ./installer.sh
 fi
