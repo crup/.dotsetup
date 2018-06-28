@@ -1,0 +1,26 @@
+"*":
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".hgrc"
+        ".buckconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "tree-view"
+      "image-view"
+    ]
+    telemetryConsent: "no"
+  "exception-reporting":
+    userId: "cddf63aa-231f-4cf5-9a69-193e000afef9"
+  nuclide:
+    installRecommendedPackages: true
+    "nuclide-flow":
+      canUseFlowBin: true
+  welcome:
+    showOnStartup: false
