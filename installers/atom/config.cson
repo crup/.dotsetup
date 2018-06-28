@@ -4,6 +4,7 @@
       "source.ini": [
         ".hgrc"
         ".buckconfig"
+        ".flowconfig"
       ]
       "source.json": [
         "BUCK.autodeps"
@@ -22,5 +23,8 @@
     installRecommendedPackages: true
     "nuclide-flow":
       canUseFlowBin: true
+  "tool-bar":
+    iconSize: "12px"
+    position: "Left"
   welcome:
     showOnStartup: false
