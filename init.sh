@@ -47,6 +47,7 @@ else
   read -p 'Mac App store email: ' email	
 fi
 
+PATH=".:$PATH";
 sh ./preferences.sh
 
 # Install brew bundle
