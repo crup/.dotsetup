@@ -36,19 +36,24 @@ else
 fi
 
 # Install CLI Mac App store
-if is_installed mas; then
-  read -p 'Mac App store email: ' email	
-#  mas signin $email
-  echo "Signed in ($email)"
-else
-  echo "Installing mas"
-  brew install mas
-  echo "mas installed"
-  read -p 'Mac App store email: ' email	
-fi
+# if is_installed mas; then
+#   read -p 'Mac App store email: ' email	
+# #  mas signin $email
+#   echo "Signed in ($email)"
+# else
+#   echo "Installing mas"
+#   brew install mas
+#   echo "mas installed"
+#   read -p 'Mac App store email: ' email	
+# fi
 
-PATH=".:$PATH";
-sh ./preferences.sh
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
+echo "Removing Bloatware apps:"
+sh $DIR/scripts/remove-bloat.sh
+
+echo "Applying preferences:"
+sh $DIR/scripts/preferences.sh
 
 # Install brew bundle
 brewFile="Brewfile"
