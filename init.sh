@@ -4,7 +4,7 @@
 #
 # Quickstart repo for setup and configurations
 #
-# Based on https://github.com/kevinelliott/.dotfiles/blob/master/install.sh
+# Inspired from https://github.com/kevinelliott/.dotfiles/blob/master/install.sh
 
 
 # Die on failures
@@ -31,7 +31,7 @@ if is_installed brew; then
   brew doctor
 else
   echo "Installing brew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   echo "brew installed"
 fi
 
@@ -44,7 +44,10 @@ else
   echo "Installing mas"
   brew install mas
   echo "mas installed"
+  read -p 'Mac App store email: ' email	
 fi
+
+sh ./preferences.sh
 
 # Install brew bundle
 brewFile="Brewfile"

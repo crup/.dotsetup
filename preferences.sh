@@ -49,28 +49,4 @@ killall Dock
 echo "Show only active apps in Dock"
 defaults write com.apple.dock static-only -bool true; killall Dock
 
-echo "Saved preferences"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+echo "Applied preferences"
