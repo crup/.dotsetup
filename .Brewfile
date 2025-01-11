@@ -1,20 +1,17 @@
 #Browsers
 cask "google-chrome"
-cask "firefox"
-cask "chromium"
 
 #Dev utils
-cask "ngrok"
 cask "visual-studio-code"
 cask "postman"
 cask "iterm2"
 cask "docker"
-brew "nginx"
+cask "sequel-ace"
+cask "vlc"
+cask "cursor"
 
-#Extras
-cask "zeplin"
-cask "slack"
-cask "maccy"
+#Dev
+brew "nvm"
 
 #System utils
 brew "bash-completion"
